@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Sep 14 11:58:55 EDT 2013:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0141-1d32-4285-000001b6e948 
+on database directory /home/dustin/IdeaProjects/hibernatetest/tmp/databases/simpleDb with class loader sun.misc.Launcher$AppClassLoader@33d232d1 
+Loaded from file:/home/dustin/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_40-b31
+user.dir=/home/dustin/IdeaProjects/hibernatetest
+os.name=Linux
+os.arch=amd64
+os.version=3.10.10-1-ARCH
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
