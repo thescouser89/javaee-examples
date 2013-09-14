@@ -9,11 +9,17 @@
     <properties>
         <property name="javax.persistence.jdbc.url"
                   value="jdbc:derby:tmp/databases/simpleDb;create=true" />
+        <!-- the value above will be the location of the derby database -->
+
         <property name="javax.persistence.jdbc.user" value="test" />
         <property name="javax.persistence.jdbc.password" value="test" />
+
         <property name="hibernate.archive.autodetection" value="class"/>
+
         <property name="hibernate.show_sql" value="true"/>
          <property name="hibernate.format_sql" value="true"/>
+
+        <!-- The setting below is used to update the schema based on our class -->
         <property name="hibernate.hbm2ddl.auto" value="update"/>
     </properties>
 
