@@ -8,7 +8,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import org.lakaz.hibernatetest.model.ToDo;
+import org.lakaz.hibernatetest.model.*;
+import org.lakaz.hibernatetest.model.mapping.*;
+
 import java.util.Date;
 public class Main {
   private static final String PERSISTENCE_UNIT_NAME = "todos";
@@ -23,6 +25,7 @@ public class Main {
     for (ToDo todo : todoList) {
       System.out.println(todo);
     }
+    // you can also search with em.find(ToDo.class, <id>);
     System.out.println("Size: " + todoList.size());
 
     // Create new todo
@@ -30,7 +33,24 @@ public class Main {
     ToDo todo = new ToDo();
     todo.setSummary("This is a test" + new Date());
     todo.setDescription("This is a test");
+
+    // using enumerated types
+    EnumeratedTypes enumTest = new EnumeratedTypes();
+    enumTest.setPlayerType(Test.GOALKEEPER);
+
+    // one to one mapping
+    Employee employee = new Employee();
+    Street street = new Street();
+
+    employee.setStreet(street);
+    street.setEmployee(employee);
+
+
     em.persist(todo);
+    em.persist(enumTest);
+    em.persist(employee);
+    em.persist(street);
+
     em.getTransaction().commit();
 
     em.close();

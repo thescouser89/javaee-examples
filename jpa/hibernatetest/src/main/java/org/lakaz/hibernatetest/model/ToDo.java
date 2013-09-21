@@ -1,17 +1,25 @@
 package org.lakaz.hibernatetest.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+import java.util.Date;
 @Entity
 public class ToDo {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+  @Column(name="SUMMARY")
   private String summary;
+  @Basic(fetch=FetchType.LAZY)
   private String description;
+
+  // use @Temporal when using java.util.Date instead
+  // of java.sql.Date
+  @Temporal(TemporalType.DATE)
+  private Date date;
+
+  // not persistent
+  @Transient private int haha;
 
   public String getSummary() {
     return summary;
